@@ -1,7 +1,7 @@
 body {
 	color:#000305;
 	font-size: 80%
-	font-family: 'Lucida Sans Unicode';
+	font-family: 'Optima';
 	line-height: 1.5;
 	text-align: left;
 }
@@ -9,11 +9,6 @@ body {
 a{
 	text-decoloration: None;
 }
-
-a:link, a:visited{
-	color: #1A94D6;
-	
-}	
 
 a:hover, a:active{
 	color: #797979; 
@@ -36,6 +31,7 @@ a:hover, a:active{
 .mainHead nav ul {
 	list-style: none;
 	margin: 0 auto;
+	color: #FFFFFF;
 }
 
 .mainHead nav ul li {
@@ -58,11 +54,17 @@ a:hover, a:active{
 	text-shadow: none;
 }
 
+.mainFooter {
+	margin-top:50px;
+	text-align: center; 
+  	font-family: 'Optima';
+}
+
 table { 
   width: 100%; 
   border-collapse: collapse; 
 }
-/* Zebra striping */
+
 tr:nth-of-type(odd) { 
   background: #eee; 
 }
@@ -74,5 +76,6 @@ th {
 td, th { 
   padding: 6px; 
   border: 1px solid #ccc; 
-  text-align: left; 
+  text-align: center; 
+  font-family: 'Optima';
 }
