@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en">
+	<head>
+		{% load staticfiles %}
+		<meta charset="utf-8"/>
+		<title>Wise Triggers</title>
+		<link rel="stylesheet" href="{% static "wise/styles.css" %}" type="text/css"/>
+		<meta name="viewport content = " width-device-width, initial-scale=1.0">
+	</head>
+	<body class="body">
+		<header class="mainHead">
+			<img src="{% static "wise/stars.gif" %}" width="100" height="100" alt="Wise Triggers"/>
+			<nav><ul>
+					<li style="width:150px;"><a href='#'>Triggers</a></li>
+					<li style="width:150px;"><a href='#'>Performance</a></li>
+					<li style="width:150px;"><a href='#'>About</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div class="mainContent">
+				<h1>Triggers</h1>
+				<hr/>
+				<table width="80%">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Solution</th>
+							<th>Enabled</th>
+							<th>Tickets Solved</th>
+						</tr>
+					</thead>
+					<tbody>			
+					{% for trigger in triggs %}
+					 <tr>
+				 		<td width="3%">{{ trigger.id }}</td>
+				 		<td width="30%"><a href="#">{{ trigger.name }}</a></td>
+				 		<td width="30%">{{ trigger.solution }}</td>
+				 		{% if trigger.is_enabled == 1 %}
+				 			<td width="10%"> Enabled </td>
+						{% else %}
+							<td style="color:red;"> Not enabled </td>
+						{% endif %}
+						<td width="10%"> {{ trigger.tickets_solved}} </td>
+						
+				 	</tr>
+				{% endfor %}
+					</tbody>
+				</table>	
+			<footer class="mainFooter"> 
+				<p copyright &copy; 2015 </p>
+			</footer>
+	</body>
+</html>
+

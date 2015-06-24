@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en">
+	<head>
+		{% load staticfiles %}
+		<meta charset="utf-8"/>
+		<title>Wise Triggers</title>
+		<link rel="stylesheet" href="{% static "wise/styles.css" %}" type="text/css"/>
+		<meta name="viewport content = " width-device-width, initial-scale=1.0">
+	</head>
+	<body class="body">
+		<header class="mainHead">
+			<img src="{% static "wise/stars.gif" %}" width="100" height="100" alt="Wise Triggers"/>
+			<nav><ul>
+					<li class='active'><a href='#'>Triggers</a></li>
+					<li><a href='#'>Performance</a></li>
+					<li><a href='#'>About</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<div class="mainContent">
+				<h1>Triggers</h1>
+				<hr/>
+				<table width="80%">
+					<thead><tr><th>Id</th><th>Name</th><th>Enabled</th></tr></thead>
+					<tbody>			
+					{% for trigger in triggs %}
+					 <tr>
+				 		<td width="10%">{{ trigger.id }}</td>
+				 		<td width="40%"><a href="#">{{ trigger.name }}</a></td>
+				 		{% if trigger.is_enabled == 1 %}
+				 			<td width="30%"> Enabled </td>
+						{% else %}
+							<td style="color:red;"> Not enabled </td>
+						{% endif %}
+				 	</tr>
+				{% endfor %}
+					</tbody>
+				</table>	
+			<footer class="mainFooter"> 
+				<p copyright &copy; 2015 </p>
+			</footer>
+	</body>
+</html>
+
